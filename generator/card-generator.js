@@ -21,6 +21,8 @@ function generateTable(fileLines) {
 
     var tableHtml = "";
 
+    let label = $("#cardLabel").val();
+
     var isTableBegun = false;
     for (var rowIndex = 0; rowIndex <= (fileLines.length - 1) / numberPerRow; rowIndex++) {
         if (rowIndex % rowsPerPage == 0) {
@@ -33,7 +35,10 @@ function generateTable(fileLines) {
             if (cellIndex >= fileLines.length) continue;
             tableHtml += "<td class='textfill'><span>";
             tableHtml += fileLines[cellIndex];
-            tableHtml += "</span></td>";
+            tableHtml += "</span>";
+            tableHtml += "<span class='card-label'>";
+            tableHtml += label;
+            tableHtml += "</span> </td>";
         }
         tableHtml += "</tr>";
         if (rowIndex % rowsPerPage == rowsPerPage - 1) {
@@ -58,7 +63,7 @@ function generateTableAndAddToPage(fileLines) {
     $('#list').html(tableHtml);
 
     // Adjust font size to fit width
-    $('.textfill').textfill({ maxFontPixels: 24 });
+    $('.textfill').textfill({ maxFontPixels: 23 });
 
     // Adjust font size to fit height
     $('.textfill span').each(function () {

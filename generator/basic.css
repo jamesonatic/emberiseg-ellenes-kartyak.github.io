@@ -6,12 +6,14 @@ html, body, table {
 }
 
 .white-on-black {
+	position: relative;
 	background-color: #000;
 	color: #FFF;
 	border-color: #FFF;
 }
 
 .black-on-white {
+	position: relative;
 	background-color: #FFF;
 	color: #000;
 	border-color: #000;
@@ -22,7 +24,6 @@ table {
 	border-collapse: separate;
 	border-spacing: 3px; /* 10 */
 	font-weight: bold;
-	font-size: 24px; /* 30 */
 	table-layout: fixed;
 	width: 21cm;
 	height: 29.7cm;
@@ -48,13 +49,13 @@ td {
 	height: 167px;
 	*/
 	width: 5cm;
-	height: 8.3835cm;
+	height: 8.1cm;
 	vertical-align: top;
 	border-width: 3px;
 	border-color: #000;
 	border-style: solid;
 	margin: 0;
-	padding: 20px;
+	padding: 10px 10px 0px 10px;
 	overflow: hidden;
 }
 
@@ -72,6 +73,13 @@ div#spinner {
 	width: 100%;
 	display: none;
 	text-align: center;
+}
+
+.card-label {
+	font-size: 11px;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
 }
 
 @media print {
