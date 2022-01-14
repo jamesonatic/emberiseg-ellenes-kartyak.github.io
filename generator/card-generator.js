@@ -1,7 +1,7 @@
 // Generating the CAH table
 function generateTable(fileLines) {
-    var numberPerRow = 4;
-    var rowsPerPage = 4;
+    var numberPerRow = 5;
+    var rowsPerPage = 2;
 
     // Skip the empty lines
     fileLines = fileLines.filter(function pass(line) {
@@ -36,8 +36,8 @@ function generateTable(fileLines) {
             tableHtml += "<td class='textfill'><span>";
             tableHtml += fileLines[cellIndex];
             tableHtml += "</span>";
-            tableHtml += "<span class='card-label'>";
-            tableHtml += label;
+            tableHtml += "<span class='small-text'>";
+            tableHtml += fileLines[cellIndex];
             tableHtml += "</span> </td>";
         }
         tableHtml += "</tr>";
@@ -63,17 +63,7 @@ function generateTableAndAddToPage(fileLines) {
     $('#list').html(tableHtml);
 
     // Adjust font size to fit width
-    $('.textfill').textfill({ maxFontPixels: 23 });
-
-    // Adjust font size to fit height
-    $('.textfill span').each(function () {
-        span = $(this);
-        while (271 < span.height()) {
-            console.log(span.height());
-            fontsize = parseInt(span.css("fontSize"));
-            span.css("fontSize", fontsize-1+"px");
-        }
-    });
+    $('.textfill').textfill({ maxFontPixels: 100 });
 
     if (COLOUR === 'white-on-black') {
         changeColourToWhiteOnBlack();
