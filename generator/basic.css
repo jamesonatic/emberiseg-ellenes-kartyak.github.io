@@ -27,7 +27,6 @@ table {
 	border-spacing: 3px; /* 10 */
 	font-weight: bold;
 	table-layout: fixed;
-	width: 29.7cm;
 	margin: 0;
 	padding: 0;
 	page-break-before: always;
@@ -52,11 +51,11 @@ td {
 	width: 5.5cm;
 	height: 8.5cm;
 	vertical-align: top;
-	border-width: 3px;
+	border-width: 2px;
 	border-color: #000;
 	border-style: solid;
 	margin: 0;
-	padding: 10px 10px 0px 10px;
+	padding: 0px;
 	overflow: hidden;
 	text-align: center;
 	vertical-align: middle;
